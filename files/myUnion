@@ -1,0 +1,29 @@
+var score: number | string = 33; // Union type, can be either number or string
+
+score = 44;
+score = "55";
+
+type User = {
+  name: string;
+  id: number;
+};
+type Admin = {
+  name: string;
+  id: number;
+};
+
+let user1: User | Admin = { name: "John", id: 3344 }; // Can be either User or Admin
+
+function getDbId(id: number | string) {
+  if (typeof id === "string") {
+    id.toLowerCase();
+  }
+  console.log(`DB ID is: ${id}`);
+}
+
+const data: number[] | string[] = [1, 2, 3]; // Array can be all of type number or string
+const data2: (string | number | boolean)[] = [1, "2", 3, true]; // Array can be of type
+// String, number or boolean, on each value instead of all
+
+let seatAllotment: "aisle" | "middle" | "window"; // Literal type, can only be one of these values
+seatAllotment = "middle";
